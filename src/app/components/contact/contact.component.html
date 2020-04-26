@@ -1,0 +1,33 @@
+<div class="container">
+	<h1>Contacto</h1>
+
+	<div id="texto" #textos>
+		<p appResaltado >
+			Esta es la pagina de contacto, puedes enviarnos cualquier duda
+		</p>
+	</div>
+	
+
+
+	<!--
+	Tamaño del Slider: 
+	<input type="number" [(ngModel)]="widthSlider" >
+	<button (click)='cargarSlider()' *ngIf='!anchuraToSlider'>Cargar Slider</button>
+	<button (click)='resetearSlider()' *ngIf='anchuraToSlider'>Resetear Slider</button>
+
+	<div *ngIf='anchuraToSlider'>
+		<slider [anchura] = 'anchuraToSlider'
+				[etiquetas] = 'captions'
+				(conseguirAutor) = 'getAutor($event)'
+		></slider>
+	</div>
+
+	-->
+		
+
+</div>
+
+<div class="container" *ngIf="autor">
+	{{ autor.nombre + ' - ' + autor.website}}
+</div>
+	

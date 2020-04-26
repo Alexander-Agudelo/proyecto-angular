@@ -1,0 +1,300 @@
+/*Importar fuentes custom*/
+@font-face{
+	font-family: 'yanone';
+	src: url('fonts/yanone.ttf');
+}
+
+@font-face{
+	font-family: 'finger';
+	src: url('fonts/finger.ttf');
+}
+
+/*Generales*/
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	font-family: 'yanone', arial, helvetica;
+	font-size: 20px;
+	background: url('../img/pattern.png');
+	background-attachment: fixed;
+}
+
+.clearfix{
+	float: none;
+	clear: both;
+}
+
+/*Barra de navegacion*/
+
+header{
+	display: block;
+	width: 100%;
+	height: 90px;
+	background: rgba(53, 164, 123, 0.83);
+	position: fixed;
+	text-transform: uppercase;
+}
+
+header ul{
+	display: block;
+	width: 54%;
+	height: inherit;
+	margin: 0px auto;
+	margin-top: -3px;
+}
+
+header ul li{
+	display: inline-block;
+	margin: 0px auto;
+	text-align: center;
+	line-height: 88px;
+
+}
+
+header a{
+	display: block;
+	padding-right: 20px;
+	padding-left: 20px;
+	height: inherit;
+	text-decoration: none;
+	color: white;
+	transition: all 300ms;
+	border-radius: 10px;
+
+}
+
+header a:hover,
+.actived{
+	background: rgba(0,0,0,0.7);
+}
+
+/* Logotipo */
+#logo{
+	font-family: 'finger';
+	font-size: 30px;
+}
+
+#logo a{
+	transition: color 500ms, transform 500ms; 
+}
+#logo a:hover{
+	background: transparent;
+	color: black;
+	transform: scale(1.50, 1.50);
+}
+
+/*Contenedor principal*/
+
+#content{
+	min-height: 540px;
+	height: auto;
+	padding-top: 120px;
+	width: 80%;
+	margin: 0px auto;
+	box-shadow: 0px 0px 40px black;
+	border-left: 1px solid #b7b7b7;
+	border-right: 1px solid #b7b7b7;
+	background: rgba(255, 255, 255, 0.6);
+}
+
+/*pie de pagina */
+
+footer{
+	width: 75%;
+	margin: 0px auto;
+	padding-top: 15px;
+	color: rgba(0, 0, 0, 0.6);
+}
+
+/*Sobre mi*/
+
+#title{
+	width: 70%;
+	margin: 0px auto;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 70px;
+}
+
+#title h1{
+	font-family: 'finger';
+	font-size: 50px;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 5px;
+}
+
+#title h2{
+	font-size: 25px;
+	color: grey;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+article.about{
+	width: 80%;
+	margin: 0px auto;
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+
+.about h2{
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+
+.about p{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: justify;
+
+}
+
+
+/*Seccion con formulario*/
+
+.container{
+	padding: 50px;
+	padding-top: 10px;
+}
+
+.container .image{
+	float: left;
+	width: 50%;
+}
+
+.container .image img{
+	width: 90%;
+}
+
+.container .data{
+	float: left;
+	width: 50%;
+}
+
+.container h2{
+	display: block;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+	margin-bottom: 15px;
+}
+
+form{
+	width: 80%;
+}
+
+form label{
+	display: block;
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+form input[type='text'],
+form input[type='number'],
+form input[type='email'],
+form textarea {
+	width: 40%;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+form button,
+form input[type='submit'],
+.button-edit,
+.button-delete{
+	display: block;
+	font-size: 17px;
+	padding:10px;
+	margin-top: 15px;
+	color: white;
+	background: rgba(53, 164, 123, 0.8);
+	border: 1px solid rgb(7, 82, 54);
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.button-edit,
+.button-delete{
+	width: 40%;
+}
+
+form button:hover,
+form input[type='submit']:hover{
+	background: rgba(53, 164, 123, 1);
+	border: 1px solid rgb(7, 82, 54);
+	border-radius: 5px;
+}
+
+form input[disabled]{
+	background: #ccc;
+	cursor: not-allowed;
+}
+
+.form_error{
+	font-size: 13px;
+	padding: 3px;
+	background: red;
+	color: white;
+	border-radius: 5px;
+	margin-left: 10px;
+}
+
+.message{
+	width: 50%;
+	padding: 5px;
+	border: 1px solid #eee;
+	border-radius: 5px;
+}
+
+.success{
+	background: rgba(53, 164, 123, 1);
+	color: white;
+}
+
+.success a{
+	color: white;
+}
+
+.failed{
+	background: red;
+	color: white;
+}
+
+/*Pagina de proyectos*/
+
+.project{
+	list-style: none;
+	display: block;
+	float: left;
+	width: 25%;
+	text-align: center;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 30px;
+}
+
+.project .image{
+	width: 100%;
+	height: 150px;
+	overflow: hidden;
+	border-radius: 20px;
+}
+
+.project img{
+	width: 100%;
+}
+
+.project a{
+	color: black;
+}
+
+.confirm{
+	display: block;
+	font-weight: bold;
+	margin-top: 10px;
+}
