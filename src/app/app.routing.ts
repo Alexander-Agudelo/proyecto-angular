@@ -24,5 +24,5 @@ const appRoutes: Routes = [
 ];
 
 // Exportar el modulo 
-export const appRoutingProviders: any[] = [];
-export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+export const appRoutingProviders: any[] = []; // exportar el servicio de rutas
+export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes); // carga nuestra configuracion de rutas en el router de angular

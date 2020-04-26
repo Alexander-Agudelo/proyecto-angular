@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Project } from '../../models/project';
-import { ProjectService } from '../../services/project.service';
+import { Project } from '../../models/project';			// importo mi modelo
+import { ProjectService } from '../../services/project.service';  // importo servicio recuerda cargarlo en providers
 import { UploadService } from '../../services/upload.service';
 import { Global } from '../../services/global';
 
@@ -20,12 +20,13 @@ export class CreateComponent implements OnInit {
 	public url: string;
 
 	constructor(
-		private _projectService: ProjectService,
+		//creo las propiedasdes del servicio para poder inyectarlas
+		private _projectService: ProjectService, 
 		private _uploadService: UploadService
 	) {
 		this.title = 'Crear proyecto';
 		this.project = new Project('','','','','',2020,'');
-		this.url = Global.url;
+		this.url = Global.url; // obtengo de services/global.ts defino mi url 
 	}
 
 	ngOnInit(): void {
@@ -33,11 +34,14 @@ export class CreateComponent implements OnInit {
 
 	onSubmit(form){
 		console.log(this.project);
-		this._projectService.saveProject(this.project).subscribe(
+
+		// entro a mi servicio ProjectService uso mi metodo saveProject y le envio el proyecto a guardar y uso subscribe para obtener los resultados
+		this._projectService.saveProject(this.project).subscribe( 
 			response => {
 				if(response.project){
 					
-					// SUbir Imagen 
+					// SUbir Imagen CON EL SERVIO UploadService y su metodo que he creado makeFileRequest voy a mi backend con la url que se envia
+					// entro al backend/controllers/project.js y uso mi metodo uploadImage
 					this._uploadService.makeFileRequest(Global.url+'upload-image/'+response.project._id, [], this.filesToUpload, 'image')
 					.then((result:any) => {
 						

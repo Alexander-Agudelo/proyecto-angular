@@ -14,20 +14,23 @@ export class ProjectsComponent implements OnInit {
 	public url: string;
 
   constructor(
+      //creo las propiedasdes del servicio para poder inyectarlas
   		private _projectService: ProjectService
   	) { 
   	this.url = Global.url;
   }
 
   ngOnInit(): void {
-  	this.getProjects();
+  	this.getProjects(); // Metodo OnInit se ejecuta al cargar el componente abro esta pestana y en ese momento ejecuta getProjects()
   }
 
   getProjects(){
+    // entro a mi servicio ProjectService uso mi metodo getProjects para hacer la peticion de los 
+    // proyectos uso subscribe para recoger la rta que me envia el api
   	this._projectService.getProjects().subscribe(
   		response => {
   			if(response.projects){
-  				this.projects = response.projects;
+  				this.projects = response.projects; // guardo el valor de esta propiedad
   			}
   		},
   		error => {

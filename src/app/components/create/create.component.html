@@ -1,4 +1,4 @@
-<div class="container" *ngIf='project'>
+<div class="container" *ngIf='project'> <!-- uso ngIf para borrar el error que me sale en consola para comprobar si existe el objeto-->
 	<h2>{{title}}</h2>
 
 	<div class="message success" *ngIf='status == "success"'>
@@ -9,10 +9,13 @@
 		El proyecto no se ha creado.
 	</div>
 
+
+	<!--Formulario -> con envio a onSumit de los datos del formulario-->
 	<form #projectForm='ngForm' (ngSubmit)='onSubmit(projectForm)'>
 		<p>
 			<label for="name">Nombre</label>
 			<input type="text" name="name" #name='ngModel' [(ngModel)]='project.name' required>
+			<!--Mesajes de vaidacion al incluir la etiqueta required-->
 			<span class="form_error" *ngIf='name.touched && !name.valid'>
 				El nombre es obligatoria
 			</span>

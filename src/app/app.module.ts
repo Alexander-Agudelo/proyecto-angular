@@ -1,8 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
+//import modulos para poder usar mis peticiones http y el data binding
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { routing, appRoutingProviders } from './app.routing'
+
+//importo fichero de rutas para poder usar en la aplicacion 
+import { routing, appRoutingProviders } from './app.routing' 
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';

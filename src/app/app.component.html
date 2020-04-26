@@ -1,4 +1,4 @@
-
+<!--menu de rutas para poder acceder visiblemente desde mi pagina, [routerLink] es el enlace al que puedo acceder desde mi url-->
 <header>
 	<ul>
 	  <li><a [routerLink]="['/sobre-mi']" [routerLinkActive]="['actived']">Sobre Mi</a></li>
@@ -9,6 +9,8 @@
 	</ul>
 </header>
 
+
+<!-- con router-outlet puedo ya navegar entre las rutas configuradas en app.routing.js -->
 <section id="content">
 	<router-outlet></router-outlet>
 </section>

@@ -28,7 +28,7 @@ body{
 	clear: both;
 }
 
-/*Barra de navegacion*/
+/*Barra de navegacion / cabecera */
 
 header{
 	display: block;
@@ -41,7 +41,7 @@ header{
 
 header ul{
 	display: block;
-	width: 54%;
+	width: 50%;
 	height: inherit;
 	margin: 0px auto;
 	margin-top: -3px;
